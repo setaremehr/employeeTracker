@@ -6,7 +6,7 @@ USE employeeTracker_db;
 
 CREATE TABLE departments (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30),
+    name VARCHAR(30)
 ); 
 
 CREATE TABLE roles (
@@ -18,12 +18,15 @@ CREATE TABLE roles (
 );
 
 
-CREATE TABLE employee (
+CREATE TABLE employees (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     role_id INT,
     manager_id INT,
     FOREIGN KEY(role_id) REFERENCES roles(id),
-    FOREIGN KEY(manager_id) REFERENCES employee(id) 
+    FOREIGN KEY(manager_id) REFERENCES employees(id) 
 );
+SELECT * FROM employees;
+SELECT * FROM roles;
+SELECT * FROM departments;
