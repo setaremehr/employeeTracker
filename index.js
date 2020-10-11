@@ -6,11 +6,7 @@ const viewDepartment = require('./lib/viewDepartment');
 const viewRoles = require('./lib/viewRoles');
 const addEmployee = require('./lib/addEmployee');
 const addRoles = require('./lib/addRoles');
-const updateRole = require('./lib/updateRole');
-
-// const connection = require('./config/connection');
-// console.log('\n Welcome to employye tracker\n');
-// optionEm();
+const addDepartment = require('./lib/addDepartment');
 
 process.on('exit', () =>{
     console.log('\n Thanks for using "Employee Tracker" Application\n');
@@ -34,8 +30,6 @@ let continueAsking = true;
                     'Add Employee',
                     'Add Roles',
                     'Add Department',
-                    'Update Employee Role',
-                    'Remove Employee',
                     'Exit'
                 ]
             }
@@ -44,18 +38,18 @@ let continueAsking = true;
         // .then( res => {
             switch (mainQuestions.option) {
                 case 'View all Employees':
-                   await viewEmployee(); // Done!
+                   await viewEmployee(); 
                     break;
 
                 case 'View all Departments':
-                    await viewDepartment(); // Done!
+                    await viewDepartment(); 
                     break;
 
                 case 'View all Roles':
-                   await viewRoles(); // Done!              
+                   await viewRoles();               
                     break;
 
-             case 'Add Employee': // Done!
+             case 'Add Employee': 
                    await addEmployee();
                     break;
 
@@ -64,15 +58,7 @@ let continueAsking = true;
                     break;
 
                 case 'Add Department':
-                    addDepartment();
-                    break;
-
-                case 'Update Employee Role':
-                    updateRole();
-                    break;
-
-                case 'Remove Employee':
-                    //removeEmployee();
+                   await addDepartment();
                     break;
 
                 case 'Exit':
@@ -96,33 +82,3 @@ let continueAsking = true;
 }
 optionEm();
 module.exports = optionEm;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function addDepartment(){
-
-// }
-
-
-
-// function   removeEmployee(){
-
-// }
